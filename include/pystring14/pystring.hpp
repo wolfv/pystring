@@ -385,7 +385,8 @@ using namespace std::string_literals;
 
         std::ostringstream buf;
         buf << seq[0];
-        for (i = 1; i < seqlen; ++i) {
+        for (i = 1; i < seqlen; ++i)
+        {
             buf << str << seq[i];
         }
 
@@ -411,13 +412,16 @@ using namespace std::string_literals;
 
             ADJUST_INDICES(start, end, len);
 
-            if (direction < 0) {
+            if (direction < 0)
+            {
                 // startswith
                 if (start + slen > len)
                 {
                     return 0;
                 }
-            } else {
+            }
+            else
+            {
                 // endswith
                 if (end - start < slen || start > len)
                 {
@@ -892,7 +896,6 @@ using namespace std::string_literals;
         return rfind(str, sub, start, end);
     }
 
-    // TODO use stream based expansion here
     string expandtabs(const string_view& str, std::ptrdiff_t tabsize)
     {
     	std::ostringstream os;
